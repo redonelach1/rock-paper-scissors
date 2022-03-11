@@ -1,5 +1,10 @@
 import random
 while(1!=0):
+    def is_win(player,opponent):
+        if ((player=='r' and opponent=='s') or (player=='s' and opponent=='p') \
+        or (player=='p' and opponent=='r')):
+        return True
+
     def play():
         Poss = ['s', 'p', 'r']
         C_choice = random.choice(Poss)
@@ -9,12 +14,6 @@ while(1!=0):
             return 'Draw'
         if is_win(P_choice,C_choice):
             return 'You Win'
-        return'I win ez'
-
-    def is_win(player,opponent):
-        #r>s,s>p,p>r
-        if ((player=='r' and opponent=='s') or (player=='s' and opponent=='p') \
-        or (player=='p' and opponent=='r')):
-            return True
-
+        return'Computer Wins'
+    
     print(play())
